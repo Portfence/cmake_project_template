@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+07db1d6c53d46fd2be7bbee8bef943cd proto/Service.pb.cc

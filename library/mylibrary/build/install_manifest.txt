@@ -1,0 +1,11 @@
+/usr/local/include/mylibrary/my_class.h
+/usr/local/lib/libMyLibrary.so
+/usr/local/lib/cmake/MyLibrary/MyLibraryTargets.cmake
+/usr/local/lib/cmake/MyLibrary/MyLibraryTargets-noconfig.cmake
+/usr/local/lib/cmake/MyLibrary/MyLibraryConfig.cmake
+/usr/local/include/Service.pb.h
+/usr/local/include/Service.grpc.pb.h
+/usr/local/lib/libMyLibraryProto.so
+/usr/local/lib/cmake/MyLibraryProto/MyLibraryProtoTargets.cmake
+/usr/local/lib/cmake/MyLibraryProto/MyLibraryProtoTargets-noconfig.cmake
+/usr/local/lib/cmake/MyLibraryProto/MyLibraryProtoConfig.cmake

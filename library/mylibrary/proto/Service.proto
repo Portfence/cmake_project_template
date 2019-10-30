@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package Utilities;
+
+service Connection
+{
+  rpc CheckUptime (CheckUptimeRequest) returns (CheckUptimeResponse) {}
+	rpc CheckTemperature (CheckTemperatureRequest) returns (CheckTemperatureResponse) {}
+}
+
+message CheckUptimeRequest
+{
+  string name = 1; // 1 is not the value of the stirng
+	int32 id = 2; // 2 is not the value of id
+}
+
+message CheckUptimeResponse
+{
+  string uptime = 1;
+}
+
+message CheckTemperatureRequest {
+  int32 id = 1;
+}
+
+message CheckTemperatureResponse
+{
+	double temperature = 1;
+}
+

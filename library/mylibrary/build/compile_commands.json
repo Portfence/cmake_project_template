@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/ahg/development/cmake_experimentation/library/mylibrary/build",
+  "command": "/usr/bin/c++   -I/home/ahg/development/cmake_experimentation/library/mylibrary/include -I/home/ahg/development/cmake_experimentation/library/mylibrary/build/proto -isystem /usr/local/include    -std=gnu++1z -o CMakeFiles/test_MyLibrary.dir/test/test_main.cpp.o -c /home/ahg/development/cmake_experimentation/library/mylibrary/test/test_main.cpp",
+  "file": "/home/ahg/development/cmake_experimentation/library/mylibrary/test/test_main.cpp"
+},
+{
+  "directory": "/home/ahg/development/cmake_experimentation/library/mylibrary/build",
+  "command": "/usr/bin/c++   -I/home/ahg/development/cmake_experimentation/library/mylibrary/include -I/home/ahg/development/cmake_experimentation/library/mylibrary/build/proto -isystem /usr/local/include    -std=gnu++1z -o CMakeFiles/test_MyLibrary.dir/test/my_class.test.cpp.o -c /home/ahg/development/cmake_experimentation/library/mylibrary/test/my_class.test.cpp",
+  "file": "/home/ahg/development/cmake_experimentation/library/mylibrary/test/my_class.test.cpp"
+},
+{
+  "directory": "/home/ahg/development/cmake_experimentation/library/mylibrary/build",
+  "command": "/usr/bin/c++  -DMyLibrary_EXPORTS -I/home/ahg/development/cmake_experimentation/library/mylibrary/include -I/home/ahg/development/cmake_experimentation/library/mylibrary/src -I/home/ahg/development/cmake_experimentation/library/mylibrary/build/proto -isystem /usr/local/include  -fPIC   -std=gnu++1z -o CMakeFiles/MyLibrary.dir/src/my_class.cpp.o -c /home/ahg/development/cmake_experimentation/library/mylibrary/src/my_class.cpp",
+  "file": "/home/ahg/development/cmake_experimentation/library/mylibrary/src/my_class.cpp"
+},
+{
+  "directory": "/home/ahg/development/cmake_experimentation/library/mylibrary/build/proto",
+  "command": "/usr/bin/c++  -DMyLibraryProto_EXPORTS -I/home/ahg/development/cmake_experimentation/library/mylibrary/build/proto -isystem /usr/local/include  -fPIC   -std=gnu++1z -o CMakeFiles/MyLibraryProto.dir/Service.pb.cc.o -c /home/ahg/development/cmake_experimentation/library/mylibrary/build/proto/Service.pb.cc",
+  "file": "/home/ahg/development/cmake_experimentation/library/mylibrary/build/proto/Service.pb.cc"
+},
+{
+  "directory": "/home/ahg/development/cmake_experimentation/library/mylibrary/build/proto",
+  "command": "/usr/bin/c++  -DMyLibraryProto_EXPORTS -I/home/ahg/development/cmake_experimentation/library/mylibrary/build/proto -isystem /usr/local/include  -fPIC   -std=gnu++1z -o CMakeFiles/MyLibraryProto.dir/Service.grpc.pb.cc.o -c /home/ahg/development/cmake_experimentation/library/mylibrary/build/proto/Service.grpc.pb.cc",
+  "file": "/home/ahg/development/cmake_experimentation/library/mylibrary/build/proto/Service.grpc.pb.cc"
+}
+]
