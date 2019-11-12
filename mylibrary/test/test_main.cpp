@@ -3,9 +3,7 @@
 
 int main(int argc, char **argv)
 {
-    testing::InitGoogleTest(&argc, argv);
     GOOGLE_PROTOBUF_VERIFY_VERSION;
-    Utilities::CheckTemperatureRequest r;
-    r.set_id(2);
+    testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }

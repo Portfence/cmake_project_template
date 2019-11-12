@@ -36,7 +36,6 @@ void MyClass::runServer(std::string address)
 	builder.RegisterService(this);
   std::unique_ptr<grpc::Server> server(builder.BuildAndStart());
 	std::cout << "Server listening on " << address << std::endl;
-	// m_Begin = std::chrono::high_resolution_clock::now();
   server->Wait();
 }
 } // namespace MyLibrary

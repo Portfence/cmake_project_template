@@ -1,5 +1,19 @@
+find_package(gRPC 1.20.0 EXACT CONFIG REQUIRED)
+if (gRPC_FOUND)
+  message(STATUS "gRPC version ${gRPC_VERSION}")
+else()
+  message(FATAL_ERROR "gRPC not found")
+endif()
+
+find_package(Protobuf 3.7.0 EXACT MODULE REQUIRED)
+if (Protobuf_FOUND)
+  message(STATUS "Protobuf version ${Protobuf_VERSION}")
+else()
+  message(FATAL_ERROR "Protobuf not found")
+endif()
+
 # create variables with output locations
-set(PROTO_GEN_SRC ${CMAKE_CURRENT_BINARY_DIR}/)
+set(PROTO_GEN_SRC ${CMAKE_CURRENT_BINARY_DIR}/gen)
 file(MAKE_DIRECTORY ${PROTO_GEN_SRC})
 
 set(PROTO_SRC "${PROTO_GEN_SRC}/Service.pb.cc")
@@ -10,6 +24,7 @@ set(GRPC_INCLUDE "${PROTO_GEN_SRC}/Service.grpc.pb.h")
 # create variable containing proto files
 set(PROTO_FILES
   ${CMAKE_CURRENT_LIST_DIR}/Service.proto
+  # ${CMAKE_CURRENT_LIST_DIR}/status.proto
 )
 
 get_target_property(gRPC_CPP_PLUGIN_EXECUTABLE gRPC::grpc_cpp_plugin IMPORTED_LOCATION_RELEASE)
@@ -32,16 +47,16 @@ add_library(${PROJECT_NAME}Proto SHARED
   ${PROTO_INCLUDE}
   ${GRPC_INCLUDE}
 )
+add_library(${PROJECT_NAME}Proto::${PROJECT_NAME}Proto ALIAS ${PROJECT_NAME}Proto)
 
-# set_target_properties(${PROJECT_NAME}Proto
-# 	PROPERTIES
-# 		LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/lib"
-# )
+set_target_properties(${PROJECT_NAME}Proto
+	PROPERTIES
+		LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/lib"
+)
 
 
 target_compile_features(${PROJECT_NAME}Proto
-  PRIVATE
-    cxx_std_17
+  PRIVATE cxx_std_17
 )
 
 target_link_libraries(${PROJECT_NAME}Proto
@@ -86,5 +101,3 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ProtoConfig.cmake
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}Proto
 )
-
-add_library(${PROJECT_NAME}Proto::${PROJECT_NAME}Proto ALIAS ${PROJECT_NAME}Proto)

@@ -2,7 +2,6 @@ get_filename_component(MyLibrary_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" DIRECTOR
 include(CMakeFindDependencyMacro)
 
 set(_TARGET_NAME "@PROJECT_NAME@")
-find_dependency(Boost REQUIRED COMPONENTS regex)
 find_dependency(MyLibraryProto REQUIRED)
 
 if(NOT TARGET MyLibrary::MyLibrary)
