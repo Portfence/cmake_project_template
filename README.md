@@ -46,7 +46,6 @@ repo
  |     |
  |     |----src/
  |     |     |----my_class.cpp
- |     |     |----CMakeLists.txt
  |     |
  |     |----test/
  |     |     |----my_class.test.cpp
