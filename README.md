@@ -54,5 +54,5 @@ repo
  |     |----CMakeLists.txt
  |
  |----README.md
- |
+ |----.gitignore
 ```
