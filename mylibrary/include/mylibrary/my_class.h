@@ -1,7 +1,7 @@
 #ifndef MY_CLASS_H
 #define MY_CLASS_H
 
-#include <Service.grpc.pb.h>
+#include <gen/Service.grpc.pb.h>
 
 namespace MyLibrary
 {

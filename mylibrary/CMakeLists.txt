@@ -54,7 +54,7 @@ install(EXPORT ${PROJECT_NAME}-export
 
 include(CMakePackageConfigHelpers)
 configure_package_config_file(
-    ${PROJECT_SOURCE_DIR}/cmake/Config.cmake.in
+    ${PROJECT_SOURCE_DIR}/cmake/${PROJECT_NAME}Config.cmake.in
     ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
     INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
 )
@@ -71,14 +71,12 @@ add_executable(test_${PROJECT_NAME}
 )
 
 target_compile_features(test_${PROJECT_NAME}
-  PRIVATE
-    cxx_std_17
+  PRIVATE cxx_std_17
 )
 
 target_link_libraries(test_${PROJECT_NAME}
-	PRIVATE
-		${PROJECT_NAME}::${PROJECT_NAME}
-		GTest::GTest
+	PRIVATE ${PROJECT_NAME}::${PROJECT_NAME}
+	PRIVATE GTest::GTest
 )
 
 set_target_properties(test_${PROJECT_NAME}

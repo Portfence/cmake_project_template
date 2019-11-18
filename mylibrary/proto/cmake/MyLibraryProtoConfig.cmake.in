@@ -1,9 +1,11 @@
+@PACKAGE_INIT@
 get_filename_component(MyLibraryProto_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" DIRECTORY)
 include(CMakeFindDependencyMacro)
 
-set(_TARGET_NAME "@PROJECT_NAME@")
 find_dependency(Protobuf REQUIRED)
 find_dependency(gRPC CONFIG REQUIRED)
-if(NOT TARGET MyLibraryProto::MyLibraryProto)
-  include("${MyLibraryProto_CMAKE_DIR}/${_TARGET_NAME}ProtoTargets.cmake")
+
+set(_TARGET_NAME "@PROJECT_NAME@Proto")
+if(NOT TARGET ${_TARGET_NAME}::${_TARGET_NAME})
+  include("${${_TARGET_NAME}_CMAKE_DIR}/${_TARGET_NAME}Targets.cmake")
 endif()

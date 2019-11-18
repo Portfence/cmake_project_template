@@ -92,7 +92,7 @@ install(EXPORT ${PROJECT_NAME}Proto-export
 
 include(CMakePackageConfigHelpers)
 configure_package_config_file(
-    ${CMAKE_CURRENT_LIST_DIR}/cmake/Config.cmake.in
+    ${CMAKE_CURRENT_LIST_DIR}/cmake/${PROJECT_NAME}ProtoConfig.cmake.in
     ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ProtoConfig.cmake
     INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}Proto
 )
