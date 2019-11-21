@@ -3,7 +3,7 @@ get_filename_component(MyLibrary_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" DIRECTOR
 
 include(CMakeFindDependencyMacro)
 
-find_dependency(MyLibraryProto CONFIG REQUIRED)
+find_dependency(MyProto CONFIG REQUIRED)
 
 set(_TARGET_NAME "@PROJECT_NAME@")
 if(NOT TARGET ${_TARGET_NAME}::${_TARGET_NAME})

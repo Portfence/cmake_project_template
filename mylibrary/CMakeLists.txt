@@ -10,12 +10,13 @@ if(NOT GTest_FOUND)
   message(FATAL_ERROR "GTest not found")
 endif()
 
-add_subdirectory(proto)
+find_package(MyProto CONFIG REQUIRED)
 
 # ############ CREATE LIB TARGET ############
 add_library(${PROJECT_NAME} SHARED
 	src/my_class.cpp
 )
+
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME}
@@ -28,8 +29,12 @@ target_compile_features(${PROJECT_NAME}
   PRIVATE cxx_std_17
 )
 
+target_compile_options(${PROJECT_NAME}
+  PRIVATE -Wunused-result
+)
+
 target_link_libraries(${PROJECT_NAME}
-	PUBLIC MyLibraryProto::MyLibraryProto
+	PUBLIC MyProto::MyProto
 	PUBLIC stdc++fs
 )
 
