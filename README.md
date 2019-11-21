@@ -12,10 +12,20 @@ $ sudo make install -C build  # Run make install from build directory
 
 ## Build and install MyLibrary
 ```MyLibrary``` is dependecy of ```App```
+
 ```bash
 $ cd mylibrary
 $ cmake . -Bbuild             # Generate Makefile in build directory
 $ cmake --build build -- -j8  # Run make from build directory
+```
+
+### Run tests
+```bash
+$ ./build/bin/test_MyLibrary
+```
+
+### Install library
+```bash
 $ sudo make install -C build  # Run make install from build directory
 ```
 
@@ -57,5 +67,5 @@ repo
  |     |----CMakeLists.txt
  |
  |----README.md
- |
+ |----.gitignore
 ```
