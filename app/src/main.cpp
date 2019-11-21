@@ -1,5 +1,5 @@
 #include <iostream>
-#include <gen/Service.grpc.pb.h>
+// #include <myproto/service.grpc.pb.h>
 #include <mylibrary/my_class.h>
 #include <boost/regex.hpp>
 #include <boost/log/trivial.hpp>
@@ -14,8 +14,10 @@ int main()
 {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
   MyLibrary::MyClass myClass;
+  Utilities::CheckTemperatureRequest r;
   grpc::Status ok;
-  std::cout << "Sum: 2+3=" << myClass.sum(2,3) << std::endl;
+  // std::cout << "Sum: 2+3=" << myClass.sum(2,3) << std::endl;
+  myClass.sum(1,2);
   std::vector<bool> v(10);
   for (const auto&& e : v)
   {
