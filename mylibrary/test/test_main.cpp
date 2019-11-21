@@ -1,5 +1,5 @@
-#include <Service.grpc.pb.h>
-#include "gtest/gtest.h"
+#include <myproto/service.grpc.pb.h>
+#include <gtest/gtest.h>
 
 int main(int argc, char **argv)
 {
