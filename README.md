@@ -10,9 +10,10 @@ $ cmake --build build -- -j8  # Run make from build directory
 $ sudo make install -C build  # Run make install from build directory
 ```
 
-## Build and install MyLibrary
+## Build, test and install MyLibrary
 ```MyLibrary``` is dependecy of ```App```
 
+### Build library
 ```bash
 $ cd mylibrary
 $ cmake . -Bbuild             # Generate Makefile in build directory
