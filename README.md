@@ -68,6 +68,6 @@ repo
  |     |     |----service.proto
  |     |----CMakeLists.txt
  |
- |----README.md
  |----.gitignore
+ |----README.md
 ```
