@@ -1,4 +1,4 @@
-# cmake_grpc_example
+# CMake Project Template
 CMake build structure experimentation. Contains app and mylibrary. Requires cmake 3.10.2, gRPC 1.20 and GTest
 
 ## Build and install MyProto
