@@ -1,5 +1,5 @@
 # cmake_grpc_example
-CMake build structure experimentation. Contains app and mylibrary. Requires cmake 3.10.2 and gRPC 1.20
+CMake build structure experimentation. Contains app and mylibrary. Requires cmake 3.10.2, gRPC 1.20 and GTest
 
 ## Build and install MyProto
 ```MyProto``` is dependecy of ```MyLibrary```
