@@ -52,7 +52,8 @@ repo
  |     |----cmake/
  |     |     |----MyLibraryConfig.cmake
  |     |----include/
- |     |     |----my_class.h
+ |     |     |----mylibrary/
+ |     |     |     |----my_class.h
  |     |----src/
  |     |     |----my_class.cpp
  |     |----test/
