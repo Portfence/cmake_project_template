@@ -1,5 +1,5 @@
-# cmake_grpc_example
-CMake build structure experimentation. Contains app, mylibrary and myproto. Requires cmake 3.10.2 and gRPC 1.20
+# CMake Project Template
+CMake build structure experimentation. Contains app, mylibrary and myproto. Requires cmake 3.10.2, gRPC 1.20 and GTest
 
 ## Build and install MyProto
 ```MyProto``` is dependecy of ```MyLibrary```
@@ -10,9 +10,10 @@ $ cmake --build build -- -j8  # Run make from build directory
 $ sudo make install -C build  # Run make install from build directory
 ```
 
-## Build and install MyLibrary
+## Build, test and install MyLibrary
 ```MyLibrary``` is dependecy of ```App```
 
+### Build library
 ```bash
 $ cd mylibrary
 $ cmake . -Bbuild             # Generate Makefile in build directory
@@ -51,7 +52,8 @@ repo
  |     |----cmake/
  |     |     |----MyLibraryConfig.cmake
  |     |----include/
- |     |     |----my_class.h
+ |     |     |----mylibrary/
+ |     |     |     |----my_class.h
  |     |----src/
  |     |     |----my_class.cpp
  |     |----test/
@@ -66,6 +68,6 @@ repo
  |     |     |----service.proto
  |     |----CMakeLists.txt
  |
- |----README.md
  |----.gitignore
+ |----README.md
 ```
