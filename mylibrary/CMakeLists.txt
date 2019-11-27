@@ -43,20 +43,25 @@ set_target_properties(${PROJECT_NAME}
 )
 
 # ############ INSTALL TARGET ############
+
+# Install public header directory mylibrary/ in /usr/local/include/
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
+# Install libMyLibrary.so in /usr/local/lib/
 install(TARGETS ${PROJECT_NAME}
   EXPORT         ${PROJECT_NAME}-export
   LIBRARY        DESTINATION ${CMAKE_INSTALL_LIBDIR}
   ARCHIVE        DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
+# Create and install MyLibraryTargets.cmake in /usr/local/include/cmake/MyLibrary/, from the export defined above
 install(EXPORT ${PROJECT_NAME}-export
   FILE         ${PROJECT_NAME}Targets.cmake
   NAMESPACE    ${PROJECT_NAME}::
   DESTINATION  ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
 )
 
+# Generate MyLibraryConfig.cmake from mylibrary/cmake/MyLibraryConfig.cmake.in which includes MyLibraryTargets.cmake and finds transitive dependecies
 include(CMakePackageConfigHelpers)
 configure_package_config_file(
     ${PROJECT_SOURCE_DIR}/cmake/${PROJECT_NAME}Config.cmake.in
@@ -64,6 +69,9 @@ configure_package_config_file(
     INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
 )
 
+# Install MyLibraryConfig.cmake in /usr/local/lib/cmake/MyLibrary so that when App calls find_package(MyLibrary CONFIG REQUIRED)
+#  MyLibraryConfig.cmake allows us to link to MyLibrary. Its transitive dependencies are found, i.e
+#  we only need to link MyLibrary::MyLibrary to the TARGET App
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
