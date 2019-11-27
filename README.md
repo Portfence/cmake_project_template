@@ -50,7 +50,7 @@ repo
  |
  |----mylibrary/
  |     |----cmake/
- |     |     |----MyLibraryConfig.cmake
+ |     |     |----MyLibraryConfig.cmake.in
  |     |----include/
  |     |     |----mylibrary/
  |     |     |     |----my_class.h
@@ -63,7 +63,7 @@ repo
  |
  |----myproto/
  |     |----cmake/
- |     |     |----MyProtoConfig.cmake
+ |     |     |----MyProtoConfig.cmake.in
  |     |----src/
  |     |     |----service.proto
  |     |----CMakeLists.txt
