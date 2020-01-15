@@ -54,7 +54,7 @@ install(TARGETS ${PROJECT_NAME}
   ARCHIVE        DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
-# Create and install MyLibraryTargets.cmake in /usr/local/include/cmake/MyLibrary/, from the export defined above
+# Create and install MyLibraryTargets.cmake in /usr/local/lib/cmake/MyLibrary/, from the export defined above
 install(EXPORT ${PROJECT_NAME}-export
   FILE         ${PROJECT_NAME}Targets.cmake
   NAMESPACE    ${PROJECT_NAME}::

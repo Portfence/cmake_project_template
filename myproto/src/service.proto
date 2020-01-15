@@ -1,30 +1,18 @@
 syntax = "proto3";
 
-package Utilities;
+package registration;
 
-service Connection
-{
-  rpc CheckUptime (CheckUptimeRequest) returns (CheckUptimeResponse) {}
-	rpc CheckTemperature (CheckTemperatureRequest) returns (CheckTemperatureResponse) {}
+service Registration {
+  rpc RegisterService (RegisterServiceRequest) returns (RegisterServiceResponse) {}
 }
 
-message CheckUptimeRequest
-{
-  string name = 1; // 1 is not the value of the stirng
-	int32 id = 2; // 2 is not the value of id
+message RegisterServiceRequest {
+  string name    = 1;
+  string service = 2;
+  string address = 3;
 }
 
-message CheckUptimeResponse
-{
-  string uptime = 1;
+message RegisterServiceResponse {
+  string message = 1;
+  string status  = 2;
 }
-
-message CheckTemperatureRequest {
-  int32 id = 1;
-}
-
-message CheckTemperatureResponse
-{
-	double temperature = 1;
-}
-
