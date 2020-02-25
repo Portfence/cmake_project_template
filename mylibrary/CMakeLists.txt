@@ -14,15 +14,15 @@ find_package(MyProto CONFIG REQUIRED)
 
 # ############ CREATE LIB TARGET ############
 add_library(${PROJECT_NAME} SHARED
-	src/my_class.cpp
+  src/my_class.cpp
 )
 
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME}
-	PUBLIC $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
-	PUBLIC $<INSTALL_INTERFACE:include>
-	PRIVATE src
+  PUBLIC $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+  PUBLIC $<INSTALL_INTERFACE:include>
+  PRIVATE src
 )
 
 target_compile_features(${PROJECT_NAME}
@@ -34,12 +34,12 @@ target_compile_options(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME}
-	PUBLIC MyProto::MyProto
-	PUBLIC stdc++fs
+  PUBLIC MyProto::MyProto
+  PUBLIC stdc++fs
 )
 
 set_target_properties(${PROJECT_NAME}
-	PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
+  PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
 )
 
 # ############ INSTALL TARGET ############
@@ -54,7 +54,7 @@ install(TARGETS ${PROJECT_NAME}
   ARCHIVE        DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
-# Create and install MyLibraryTargets.cmake in /usr/local/include/cmake/MyLibrary/, from the export defined above
+# Create and install MyLibraryTargets.cmake in /usr/local/lib/cmake/MyLibrary/, from the export defined above
 install(EXPORT ${PROJECT_NAME}-export
   FILE         ${PROJECT_NAME}Targets.cmake
   NAMESPACE    ${PROJECT_NAME}::
@@ -79,8 +79,8 @@ install(FILES
 
 # ############ CREATE TEST TARGET ############
 add_executable(test_${PROJECT_NAME}
-	test/test_main.cpp
-	test/my_class.test.cpp
+  test/test_main.cpp
+  test/my_class.test.cpp
 )
 
 target_compile_features(test_${PROJECT_NAME}
@@ -88,11 +88,11 @@ target_compile_features(test_${PROJECT_NAME}
 )
 
 target_link_libraries(test_${PROJECT_NAME}
-	PRIVATE ${PROJECT_NAME}::${PROJECT_NAME}
-	PRIVATE GTest::GTest
+  PRIVATE ${PROJECT_NAME}::${PROJECT_NAME}
+  PRIVATE GTest::GTest
 )
 
 set_target_properties(test_${PROJECT_NAME}
-	PROPERTIES
-		RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+  PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
 )
