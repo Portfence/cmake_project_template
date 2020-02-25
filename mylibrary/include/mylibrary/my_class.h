@@ -5,17 +5,17 @@
 
 namespace MyLibrary
 {
-class MyClass : public Utilities::Connection::Service
+class MyClass : public registration::Registration::Service
 {
 public:
-  explicit MyClass();
-  ~MyClass();
+  explicit MyClass() = default;
+  ~MyClass() = default;
 
   int sum(int a, int b);
 
   void runServer(std::string address);
 
-  grpc::Status CheckTemperature(grpc::ServerContext* context, const Utilities::CheckTemperatureRequest* request, Utilities::CheckTemperatureResponse* response) override;
+  grpc::Status RegisterService(grpc::ServerContext* context, const registration::RegisterServiceRequest* request, registration::RegisterServiceResponse* response) override;
 };
 }
 #endif // M_CLASS_H

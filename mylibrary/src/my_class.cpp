@@ -6,15 +6,6 @@
 
 namespace MyLibrary
 {
-MyClass::MyClass()
-{
-}
-
-MyClass::~MyClass()
-{
-
-}
-
 int MyClass::sum(int a, int b)
 {
   std::experimental::filesystem::exists("Log");
@@ -22,7 +13,7 @@ int MyClass::sum(int a, int b)
   return a + b;
 }
 
-grpc::Status MyClass::CheckTemperature(grpc::ServerContext* context, const Utilities::CheckTemperatureRequest* request, Utilities::CheckTemperatureResponse* response)
+grpc::Status MyClass::RegisterService(grpc::ServerContext* context, const registration::RegisterServiceRequest* request, registration::RegisterServiceResponse* response)
 {
   grpc::Status status(grpc::StatusCode::OK, "RPC OK");
   return status;
