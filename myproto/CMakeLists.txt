@@ -39,12 +39,12 @@ get_target_property(gRPC_CPP_PLUGIN_EXECUTABLE gRPC::grpc_cpp_plugin IMPORTED_LO
 # (not generated without reference in add_executable)
 add_custom_command(
     OUTPUT ${PROTO_SRC}	${PROTO_INCLUDE}
-					 ${GRPC_SRC}  ${GRPC_INCLUDE}
+           ${GRPC_SRC}  ${GRPC_INCLUDE}
     COMMAND protobuf::protoc
     ARGS --grpc_out ${PROTO_CODEGEN}
-				 --cpp_out ${PROTO_CODEGEN}
-				  -I="${CMAKE_CURRENT_LIST_DIR}/src"
-				 --plugin=protoc-gen-grpc="${gRPC_CPP_PLUGIN_EXECUTABLE}"
+         --cpp_out ${PROTO_CODEGEN}
+          -I="${CMAKE_CURRENT_LIST_DIR}/src"
+         --plugin=protoc-gen-grpc="${gRPC_CPP_PLUGIN_EXECUTABLE}"
          ${PROTO_FILES}
 )
 
@@ -57,8 +57,8 @@ add_library(${PROJECT_NAME} SHARED
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 set_target_properties(${PROJECT_NAME}
-	PROPERTIES
-		LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/lib"
+  PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/lib"
 )
 
 
